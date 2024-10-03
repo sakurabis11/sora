@@ -1,0 +1,15 @@
+x = INT(10);
+y = FLOAT(20.5);
+z = True;
+name = STR("Sora");
+
+show("Enter a number: ");
+user_input = get();
+
+show(x);
+show(y);
+show(z);
+show(name);
+show(user_input);
+show(f"Hi {name} \n{z}");
+show(category(name));
