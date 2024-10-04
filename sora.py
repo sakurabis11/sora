@@ -1,6 +1,5 @@
 import tokenize
 import io
-from colorama import Fore
 
 def translate_code(code):
     token_map = {
@@ -39,7 +38,7 @@ def execute_sora_code(code):
     translated_code_with_semicolons = add_semicolons(translated_code)
     #translated_code_with_semicolons = translated_code_with_semicolons.replace('if', 'if').replace('else:', 'ELSE;')
     exec(
-        "INT = int\nFLOAT = float\nBOOL = bool\nSTR = str\ndef get(): return input()\ndef show(value):\n    if isinstance(value, (int, float)):\n        print(Fore.LIGHTGREEN_EX + str(value))\n    elif isinstance(value, str) and value.lower() == 'category':\n        print(Fore.LIGHTGREEN_EX + 'The type is:')\n        print(type(x))\n    else:\n        print(Fore.LIGHTGREEN_EX + value)\ndef category(x) : return str(type(x))\n" +
+        "INT = int\nFLOAT = float\nBOOL = bool\nSTR = str\ndef get(): return input()\ndef show(value):\n    if isinstance(value, (int, float)):\n        print(str(value))\n    elif isinstance(value, str) and value.lower() == 'category':\n        print('The type is:')\n        print(type(x))\n    else:\n        print(value)\ndef category(x) : return str(type(x))\n" +
         translated_code_with_semicolons
     )
 
